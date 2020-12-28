@@ -1,0 +1,45 @@
+.tabel {
+    display: grid;
+    position: relative;
+    grid-template: 12.6fr 12.6fr 15.2fr/ 2.76fr 2.97fr;
+    max-width: 573px;
+
+    &__cell {
+        width: 100%;
+        padding: 15px 20px 30px;
+        
+        border-bottom: 1px solid #979797; 
+
+        &--last {
+            grid-column: 1/3;
+            border-bottom: none;
+
+        }
+
+        &:nth-child(2) {
+            border-left: 1px solid #979797; 
+        }
+        &:nth-child(4) {
+            border-left: 1px solid #979797; 
+        }
+    }
+
+    &__title {
+        margin-bottom: .42em;
+    }
+
+    &__border {
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width:calc(100% + 1px);
+            display: block;
+            object-fit: cover;
+        }
+    }
+
+}

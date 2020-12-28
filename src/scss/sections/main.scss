@@ -1,0 +1,65 @@
+.main {
+    position: relative;
+    padding: 21px 0 53px;
+    background: url('../img/main/main-bg.jpg') 50% 50%/cover no-repeat;
+
+    &__title {
+        margin-bottom: 0.275em;
+    }
+
+    &__suptitle {
+        margin-bottom: 1.5417em;
+    }
+
+    &__btn {
+        display: block;
+        margin: 0 auto calc(364vw/14.4);
+        
+        @media (min-width: 1440px) {
+            margin: 0 auto 364px;
+        }
+        a {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+
+            .line {
+                position: absolute;
+                top: 0;
+                right: 4.1875em;
+                width: 1px;
+                height: 24px;
+                background-color: $btn-text-color;
+                opacity: .5;
+    
+                transform: matrix(1, 0, 0.04, 1, 0, 0);
+            }
+        }
+    }
+
+    .down {
+        font-weight: 700;
+        font-size: .75rem;
+        line-height: 22/ 12 * 100%;
+
+        text-transform: uppercase;
+        a {
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: $text-color; 
+
+            margin: 0 auto;
+            span {
+                display: block;
+            }
+            svg {
+                width: 23px;
+                height: 13px;
+                fill: none;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,16 @@
+.btn {
+    width: 260px;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 22px;
+    text-align: center;
+
+    color: $btn-text-color;
+    background: linear-gradient(194.68deg, $main-color 11.27%, #F3AF34 90.4%);
+    border-radius: .25em;
+    padding: 1.25em 1em;
+
+    a {
+        color: $btn-text-color;
+    }
+}

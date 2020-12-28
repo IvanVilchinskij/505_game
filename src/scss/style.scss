@@ -1,0 +1,61 @@
+/* Mixins */
+
+@mixin font($font_name, $file_name, $weight, $style) {
+
+    @font-face {
+        font-family: $font_name;
+        font-display: swap;
+        src: url("../fonts/#{$file_name}.woff") format("woff"),
+        url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-weight: #{$weight};
+        font-style: #{$style};
+    }
+}
+
+/* Vars */
+
+$main-color: #FFB548;
+$text-color: #fff;
+$btn-text-color: #1A1917;
+
+/* Fonts */
+
+@import 'fonts';
+
+/* Reset default */
+
+@import 'default';
+
+/* Common set */
+
+html, body {
+    font-size: 16px;
+    font-family: 'OpenSans', Arial, Helvetica, sans-serif;
+}
+
+/* Blocks */
+
+@import 'blocks/wrappers';
+@import 'blocks/header';
+@import 'blocks/nav';
+@import 'blocks/lang';
+@import 'blocks/titles';
+@import 'blocks/btn';
+@import 'blocks/head';
+@import 'blocks/slider';
+@import 'blocks/body';
+@import 'blocks/rectangles';
+@import 'blocks/progress-bar';
+@import 'blocks/block';
+@import 'blocks/tabel';
+@import 'blocks/card';
+
+/* Sections */
+
+@import 'sections/main';
+@import 'sections/about';
+@import 'sections/features';
+@import 'sections/req';
+@import 'sections/quotes';
+@import 'sections/subscribe';
+@import 'sections/footer';

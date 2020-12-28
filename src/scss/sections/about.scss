@@ -1,0 +1,46 @@
+.about {
+    position: relative;
+    padding: 200px 0 240px;
+    background: url('../img/about/about-bg.jpg') center center/cover no-repeat;
+
+    &__grid {
+        display: grid;
+        grid-template: 25.4fr 35.3fr / 58fr 62fr;
+        height: calc(610vw/14.4);
+
+        @media (min-width: 1440px) {
+            height: 610px;
+        }
+    }
+
+    &__body {
+        grid-row: 2 / 3;
+        text-align: justify;
+
+        width: 365/581 * 100%;
+
+        justify-self: end;
+        padding: calc(60/542*100%) calc(30/581 * 100%) 0 0;
+
+        span {
+            position: relative;
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: -1;
+                bottom: 2px;
+                left: 0;
+                width: 100%;
+                height: 6px;
+                background-color: $main-color;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            padding: 60px 30px 0 0 ;
+        }
+    }
+
+}
+

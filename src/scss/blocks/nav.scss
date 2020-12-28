@@ -1,0 +1,22 @@
+.nav {
+    &--pt {
+        padding-top: 25px;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item {
+        font-weight: 700;
+        font-size: .75rem;
+        line-height: 100%;
+        text-align: right;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+
+        a {
+            color: $text-color;
+        }
+    }
+}

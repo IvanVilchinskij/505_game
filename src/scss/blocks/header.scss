@@ -1,0 +1,21 @@
+.header {
+    display: grid;
+    grid-template: auto /  23fr 62fr 35fr;
+    align-items: center;
+
+    margin-bottom: calc(237vw/14.4);
+
+    @media (min-width: 1440px) {
+        margin-bottom: 237px;
+    }
+
+    &__logo {
+        width: 55px;
+        height: 55px;
+        img {
+            display: block;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}

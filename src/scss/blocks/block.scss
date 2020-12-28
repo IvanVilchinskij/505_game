@@ -1,0 +1,39 @@
+.block {
+    position: relative;
+    transition: .6s ease;
+
+    &__title {
+        margin-bottom: 1.11em;
+
+        &--mb0 {
+            margin-bottom: 0;
+        }
+    }
+
+    &__body {
+        position: absolute;
+        top: -10%;
+        left: 0;
+        visibility: hidden;
+        opacity: 0;
+        text-align: justify;
+
+        transition: .3s ease ;
+    }
+
+    &.active {
+        &:last-child {
+            margin-bottom: 0 !important;
+            .block__title {
+                margin-bottom: 0;
+            }
+        }
+
+        .block__body {
+            visibility: visible;
+            opacity: 1;
+            top: 2.4em;
+            transition: .3s ease .3s;
+        }
+    }
+}

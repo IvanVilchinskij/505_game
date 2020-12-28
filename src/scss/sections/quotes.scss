@@ -1,0 +1,33 @@
+.quotes {
+    position: relative;
+    background: url('../img/quotes/quotes-bg.jpg') center center/cover no-repeat;
+    padding: 160px 0 147px;
+
+    &__grid {
+        display: grid;
+        grid-template: auto / calc(437/1200 * 100%) calc(597/1200 * 100%);
+        grid-column-gap: 167/1200*100%;
+        grid-row-gap: 30px;
+        align-items: center;
+    }
+
+    &__descr {
+        grid-column: 1/2;
+        grid-row: 1/4;
+    }
+
+    &__suptitle {
+        text-align-last: left;
+        margin-bottom: .375em;
+    }
+
+    &__title {
+        text-align-last: left;
+        margin-bottom: .5em;
+    }
+
+    &__body {
+        margin-bottom: 2.22em;
+    }
+    
+}

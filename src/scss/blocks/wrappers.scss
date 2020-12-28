@@ -1,0 +1,26 @@
+.wrapper {
+    width: 100%;
+    background-color: #080A0B;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 calc(120/1440 * 100%);
+
+    &--pos {
+        position: relative;
+        z-index: 1;
+    }
+
+    &--df {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media (min-width: 1440px) {
+        padding: 0 120px;
+    }
+}

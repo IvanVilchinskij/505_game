@@ -1,0 +1,38 @@
+.title {
+    font-family: 'BEBAS NEUE', Arial, Helvetica, sans-serif ;
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.0375em;
+    text-transform: uppercase;
+
+    color: $text-color;
+
+    &--color-main {
+        font-size: 2.25rem;
+        color: $main-color;
+        text-align-last: left;
+        letter-spacing: .055em;
+    }
+
+    &--cursor-p {
+        cursor: pointer;
+        transition: .6s ease;
+    }
+
+    &--fz-sm {
+        font-size: 1.5rem;
+    }
+}
+
+.suptitle {
+    font-family: 'BEBAS NEUE', Arial, Helvetica, sans-serif ;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 100%;
+    letter-spacing: 0.0833em;
+    text-align: center;
+
+    color: #FFFFFF;
+}

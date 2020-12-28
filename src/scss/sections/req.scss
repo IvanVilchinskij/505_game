@@ -1,0 +1,13 @@
+.req {
+    position: relative;
+    padding: 145px 0 170px;
+    background: url('../img/req/req-bg.jpg') 50% 90%/cover no-repeat;
+
+    &__suptitle {
+        margin-bottom: .5em;
+    }
+
+    &__title {
+        margin-bottom: 133px;
+    }
+}

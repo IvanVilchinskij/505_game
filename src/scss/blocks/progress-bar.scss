@@ -1,0 +1,56 @@
+.progress-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 32px;
+    margin-top: 10px;
+
+    &__dot {
+        position: relative;
+        width: 14px;
+        height: 14px;
+        border: 1.30637px solid #FFFFFF;
+        border-radius: 50%;
+        transform: rotateX(0.00001deg);
+        overflow: hidden;
+
+        &:first-child {
+            background-color: #fff;
+        }
+
+        &.active-dot {
+            .progress-bar__progress {
+                top: 0;
+            }
+        }
+    }
+
+    &__line {
+        position: relative;
+        width: 2px;
+        height: 133px;
+        overflow: hidden;
+
+        &.active {
+            .progress-bar__progress {
+                top: 0;
+            }
+        }
+    }
+
+    &__progress {
+        position: absolute;
+        top: -100%;
+        left : 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transition-timing-function: linear;
+
+    }
+
+    [data-progressline="0"] {
+        background-color: #fff;
+    }
+
+}

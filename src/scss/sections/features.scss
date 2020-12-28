@@ -1,0 +1,34 @@
+.features {
+    position: relative;
+    padding: 168px 0;
+    min-height: calc(870vw/14.4);
+    background: url('../img/features/features-bg.jpg') 50% 0/cover no-repeat;
+
+    @media (min-width: 1440px) {
+        min-height: 870px;
+    }
+    &__titles, &__wrapper {
+        margin-left: 675/1200 * 100%;
+    }
+
+    &__title, &__suptitle {
+        text-align: left;
+    }
+
+    &__suptitle {
+        margin-bottom: .3em;
+        padding-left: .1875rem;
+    }
+
+    &__title {
+        margin-bottom: .925em;
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__content {
+        width: 370px;
+    }
+}
