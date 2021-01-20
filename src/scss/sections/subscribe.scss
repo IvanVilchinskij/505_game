@@ -2,11 +2,30 @@
     position: relative;
     padding: 50px 0 0;
 
+    @media (max-width: 575px)  {
+        padding: 50px 0 61px;
+    }
+
     &__img {
         position: relative;
         z-index: 1;
         width: 446/1200*100%;
         margin-left: 40/1200*100%;
+
+        @media (max-width: 1199px) {
+            margin-left: 0;
+        }
+
+        @media (max-width: 767px) {
+            position: absolute;
+            right: 65%;
+            top: -30px;
+            width: 30%;
+        }
+        @media (max-width: 575px) {
+            width: 230px;
+            top: 0;
+        }
         img {
             display: block;
             max-width: 100%;
@@ -28,10 +47,22 @@
 
     &__text {
         width: 660/1200*100%;
+        @media (max-width: 991px) {
+            width: 75%;
+        }
+        @media (max-width: 767px) {
+            width: 100%;     
+            position: relative;
+            z-index: 5;
+        }
     }
 
     &__suptitle, &__title {
-        text-align-last: left;
+        text-align: left;
+        @media (max-width: 767px) {
+            margin-left: 100/290 * 100%;
+        }
+        
     }
 
     &__suptitle {
@@ -40,32 +71,61 @@
 
     &__title {
         margin-bottom: 0.5em;
+        @media (max-width: 767px) {
+            width: 50%;
+        }
     }
 
     &__body {
-        margin-bottom: 3.5em    ;
+        margin-bottom: 3.5em;
+        @media (max-width: 767px) {
+            margin-left: 100/290 * 100%;
+        }
     }
 
     &__form {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width: 767px) {
+            flex-wrap: wrap;
+            margin-left: 50/290 * 100%;
+
+        }
+
+        @media (max-width: 575px) {
+            margin-left: 0;
+        }
     }
 
     &__input {
         position: relative;
         width: 367/660 *100%;
+        @media (max-width: 991px) {
+            width: 55%;
+        }
+        @media (max-width: 767px) {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
         span {
             position: absolute;
             top: .5em;
             left: 21px;
 
             font-weight: normal;
-            font-size: .875rem;
             line-height: 136%;
 
             color: $text-color;
             opacity: .5;
+
+            @include adaptiv-font(0.875, 0.75);
+
+            @media (min-width: 1440px) {
+                font-size: 0.875rem;
+            }
         }
 
         input {
@@ -75,9 +135,33 @@
             font-size: 1.125rem;
             line-height: 139%;
             border-radius: .27em;
-            background-color: #1C1E1F;
+            background: rgba(255, 255, 255, 0.08);
             color: $main-color;
-            padding: 1.6em 21px .39em ;
+            padding: 1.6em 21px .34em ;
+            height: 60px;
+
+            @include adaptiv-font(1.125, 0.875);
+
+            @media (min-width: 1440px) {
+                font-size: 1.125rem;
+            }
+
+            @media (max-width: 991px) {
+                height: 47px;
+            }
+
+        }
+    }
+
+    &__btn {
+        width: 260 / 660 *100% ;
+        height: 60px;
+        @media (max-width: 991px) {
+            height: 47px;
+            width: 40%;
+        }
+        @media (max-width: 767px) {
+            width: 100%;
         }
     }
 }

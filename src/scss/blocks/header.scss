@@ -1,5 +1,6 @@
 .header {
     display: grid;
+    position: relative;
     grid-template: auto /  23fr 62fr 35fr;
     align-items: center;
 
@@ -9,6 +10,19 @@
         margin-bottom: 237px;
     }
 
+    @media (max-width: 1199px) {
+        grid-template: auto / 12fr 75fr 28fr;
+    }
+
+    @media (max-width: 991px) {
+        grid-template: auto / 1fr 1fr;
+    }
+
+    @media (max-width: 575px) {
+        margin-bottom: calc(174vw/3.2);
+    }
+    
+
     &__logo {
         width: 55px;
         height: 55px;
@@ -16,6 +30,11 @@
             display: block;
             width: 100%;
             object-fit: contain;
+        }
+
+        @media (max-width: 575px) {
+            width: 33px;
+            height: 33px;
         }
     }
 }

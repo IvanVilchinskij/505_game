@@ -1,9 +1,11 @@
 .btn {
-    width: 260px;
+    width: 16.25em;
+    height: 3.75em;
     font-weight: bold;
-    font-size: 1rem;
-    line-height: 22px;
+    line-height: 137.5%;
     text-align: center;
+
+    @include adaptiv-font(1, 0.875);
 
     color: $btn-text-color;
     background: linear-gradient(194.68deg, $main-color 11.27%, #F3AF34 90.4%);
@@ -12,5 +14,15 @@
 
     a {
         color: $btn-text-color;
+    }
+
+    @media (min-width: 1440px) {
+        font-size: 1rem;
+    }
+    @media (max-width: 991px) {
+        width: 15.5em;
+        height: 3.14em;
+        padding: .89em .7em;
+        line-height: 135.7%;
     }
 }

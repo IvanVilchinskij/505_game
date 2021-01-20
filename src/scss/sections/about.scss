@@ -3,6 +3,21 @@
     padding: 200px 0 240px;
     background: url('../img/about/about-bg.jpg') center center/cover no-repeat;
 
+    @media (max-width: 991px) {
+        overflow: hidden;
+        padding: 120px 0 160px;
+    }
+
+    @media (max-width: 767px) {
+        padding: 60px 0 100px;
+    }
+
+    @media (max-width: 575px) {
+        padding: 20px 0 27px;
+        background: url('../img/about/about-bg.jpg') 15% 50%/cover no-repeat;
+    }
+
+
     &__grid {
         display: grid;
         grid-template: 25.4fr 35.3fr / 58fr 62fr;
@@ -10,6 +25,10 @@
 
         @media (min-width: 1440px) {
             height: 610px;
+        }
+        @media (max-width: 991px) {
+            height: auto;
+            grid-template: auto / 1fr;
         }
     }
 
@@ -39,6 +58,14 @@
 
         @media (min-width: 1440px) {
             padding: 60px 30px 0 0 ;
+        }
+        @media (max-width: 991px) {
+            padding: 23px 0 0 calc(21/320 * 100%);
+            justify-self: start;
+        }
+
+        @media (max-width: 575px) {
+            width: 270px;
         }
     }
 

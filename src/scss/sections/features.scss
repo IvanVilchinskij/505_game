@@ -1,23 +1,44 @@
 .features {
     position: relative;
-    padding: 168px 0;
+    padding: 168px 0 50px;
     min-height: calc(870vw/14.4);
     background: url('../img/features/features-bg.jpg') 50% 0/cover no-repeat;
 
     @media (min-width: 1440px) {
         min-height: 870px;
     }
+    @media (max-width: 1199px) {
+        min-height: 670px;
+        background: url('../img/features/features-bg.jpg') 40% 0/cover no-repeat;
+    }
+    @media (max-width: 767px) {
+        padding: 82px 0 50px;
+        min-height: 670px;
+    }
+    @media (max-width: 575px) {
+        min-height: 515px;
+    }
     &__titles, &__wrapper {
         margin-left: 675/1200 * 100%;
+        @media (max-width: 991px) {
+            margin-left: 570/1200 * 100%;
+        }
+        @media (max-width: 575px) {
+            margin-left: 94/290 * 100%;
+        }
     }
 
     &__title, &__suptitle {
         text-align: left;
+        
     }
 
     &__suptitle {
         margin-bottom: .3em;
         padding-left: .1875rem;
+        @media (max-width: 575px) {
+            margin-bottom: 0;
+        }
     }
 
     &__title {

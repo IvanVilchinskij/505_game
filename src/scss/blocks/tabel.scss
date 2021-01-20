@@ -4,11 +4,19 @@
     grid-template: 12.6fr 12.6fr 15.2fr/ 2.76fr 2.97fr;
     max-width: 573px;
 
+    @media (max-width: 575px) {
+        grid-template: 11fr 8.3fr 12.4fr/ 14.1fr 14.8fr;
+    }
+
     &__cell {
         width: 100%;
         padding: 15px 20px 30px;
         
         border-bottom: 1px solid #979797; 
+
+        @media (max-width: 575px) {
+            padding: 10px 10px 15px;
+        }
 
         &--last {
             grid-column: 1/3;
@@ -35,10 +43,22 @@
         width: 100%;
         height: 100%;
 
-        img {
-            width:calc(100% + 1px);
-            display: block;
-            object-fit: cover;
+    }
+
+    &__img {
+        width:calc(100% + 1px);
+        display: block;
+        object-fit: cover;
+
+        @media (max-width: 430px) {
+            display: none;
+        }
+
+        &--sm {
+            display: none;
+            @media (max-width: 430px) {
+                display: block;
+            }
         }
     }
 

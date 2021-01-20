@@ -1,10 +1,31 @@
 .nav {
     &--pt {
         padding-top: 25px;
+        @media (max-width: 991px) {
+            width: 100%;
+            padding-top: 45px;
+        }
     }
+
+    
     &__list {
         display: flex;
         justify-content: space-between;
+
+        &--menu {
+            @media (max-width: 575px) {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        &--footer {
+            @media (max-width: 575px) {
+                flex-wrap: wrap;
+                margin-bottom: 16px;
+            }
+            
+        }
     }
 
     &__item {
@@ -15,8 +36,26 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
 
+        &--menu {
+            @media (max-width: 575px) {
+                padding: 20px 15px;
+            }
+        }
+
+        &--footer {
+            @media (max-width: 575px) {
+                padding-bottom: 23px;
+            }
+        }
+
         a {
             color: $text-color;
+
+            transition: color .2s ease;
+
+            &:hover {
+                color: $main-color;
+            }
         }
     }
 }

@@ -9,20 +9,23 @@ let path={
         css: `${projectFolder}/css/`,
         js: `${projectFolder}/js/`,
         img: `${projectFolder}/img/`,
-        fonts: `${projectFolder}/fonts/`
+        fonts: `${projectFolder}/fonts/`,
+        favicons: `${projectFolder}/favicons/`
     },
     src: {
         html: [`${sourceFolder}/*.html`, `!${sourceFolder}/_*.html`],
         css: `${sourceFolder}/scss/style.scss`,
         js: `${sourceFolder}/js/*.js`,
-        img: `${sourceFolder}/img/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml}`,
-        fonts: `${sourceFolder}/fonts/*.ttf`
+        img: `${sourceFolder}/img/**/*.{jpg,png,svg,gif,ico,webp}`,
+        fonts: `${sourceFolder}/fonts/*.ttf`,
+        favicons: `${sourceFolder}/favicons/**/*`
     },
     watch: {
         html: `${sourceFolder}/**/*.html`, 
         css: `${sourceFolder}/scss/**/*.scss`,
         js: `${sourceFolder}/js/**/*.js`,
-        img: `${sourceFolder}/img/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml}`
+        img: `${sourceFolder}/img/**/*.{jpg,png,svg,gif,ico,webp}`,
+        favicons : `${sourceFolder}/favicons/**/*`
     },
     clean: `./${projectFolder}/`
 };
@@ -152,6 +155,11 @@ gulp.task('otf2ttf', function() {
            .pipe(dest(sourceFolder + '/fonts/'));
 });
 
+function favicons() {
+    return src(path.src.favicons)
+            .pipe(dest(path.build.favicons));
+}
+
 function svgSpriter()  {
     return gulp.src([sourceFolder + '/iconsprite/*.svg'])
            .pipe(svgSprite({
@@ -193,17 +201,19 @@ function watchFiels(params) {
     gulp.watch([path.watch.css], css);
     gulp.watch([path.watch.js], js);
     gulp.watch([path.watch.img], images);
+    gulp.watch([path.watch.favicons], favicons);
 }
 
 function clean(params) {
     return del(path.clean);
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle, svgSpriter);
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, favicons), fontsStyle, svgSpriter);
 let watch = gulp.parallel(build, watchFiels, browserSync);
 
 exports.fontsStyle = fontsStyle;
 exports.svgSpriter = svgSpriter;
+exports.favicons = favicons;
 exports.fonts = fonts;
 exports.images = images;
 exports.js = js;

@@ -20,7 +20,30 @@
         align-items: center;
     }
 
+    &--main {
+        padding: 21px calc(120/1440 * 100%);
+        @media (min-width: 1440px) {
+            padding: 21px 120px !important;
+        }
+        @media (max-width: 575px) {
+            padding: 10px calc(15/320 * 100%) !important;
+        }
+    }
+
+    &--menu {
+        @media (max-width: 575px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+    }
+
     @media (min-width: 1440px) {
         padding: 0 120px;
+    }
+
+    @media (max-width: 575px) {
+        padding: 0 calc(15/320 * 100%);
     }
 }

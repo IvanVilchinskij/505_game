@@ -1,6 +1,6 @@
 .block {
     position: relative;
-    transition: .6s ease;
+    transition: all .6s ease;
 
     &__title {
         margin-bottom: 1.11em;
@@ -18,7 +18,7 @@
         opacity: 0;
         text-align: justify;
 
-        transition: .3s ease ;
+        transition: all .3s ease ;
     }
 
     &.active {
@@ -33,7 +33,7 @@
             visibility: visible;
             opacity: 1;
             top: 2.4em;
-            transition: .3s ease .3s;
+            transition: all .3s ease .3s;
         }
     }
 }

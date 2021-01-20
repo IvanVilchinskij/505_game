@@ -20,10 +20,30 @@
 
     &--features {
         background: radial-gradient(51.1% 80.48% at 30.85% 53.65%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 19.2%, rgba(4, 5, 6, 0.520671) 47.48%, #080A0B 99.74%);
+
+        @media (max-width: 991px) {
+            background: radial-gradient(28.1% 92.48% at 20.85% 59.65%,rgba(255,255,255,0) 0,rgba(0,0,0,0) 19.2%,rgba(4,5,6,.520671) 47.48%,#080a0b 99.74%);
+        }
+        @media (max-width: 767px) {
+            background: radial-gradient(31.45% 57.77% at 23.45% 40.62%,rgba(255,255,255,0) 0,rgba(0,0,0,0) 0,rgba(4,5,6,.520671) 25.99%,rgba(6,7,8,.739601) 65.03%,#080a0b 99.74%);
+        }
+        @media (max-width: 575px) {
+            background: radial-gradient(28.45% 50.77% at 14.45% 39.62%,rgba(255,255,255,0) 0,rgba(0,0,0,0) 0,rgba(4,5,6,.520671) 25.99%,rgba(6,7,8,.739601) 65.03%,#080a0b 99.74%);
+        }
     }
 
     &--req {
         background: radial-gradient(33.26% 45% at 64.32% 47.1%, rgba(255, 255, 255, 0) 3.36%, rgba(0, 0, 0, 0) 19.22%, #080A0B 99.74%);
+
+        @media (max-width: 1199px) {
+            background: radial-gradient(33.26% 45% at 78.32% 51.1%,rgba(255,255,255,0) 3.36%,rgba(0,0,0,0) 19.22%,#080a0b 99.74%);
+        }
+        @media (max-width: 767px) {
+            background: radial-gradient(49.26% 17% at 43.32% 80.1%,rgba(255,255,255,0) 3.36%,rgba(0,0,0,0) 19.22%,#080a0b 99.74%);
+        }
+        @media (max-width: 430px) {
+            background: radial-gradient(49.26% 24% at 43.32% 77.1%,rgba(255,255,255,0) 3.36%,rgba(0,0,0,0) 19.22%,#080a0b 99.74%);
+        }
     }
 
     &--quotes-f {

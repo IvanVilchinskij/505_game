@@ -1,16 +1,16 @@
-<div class="main">
-    <div class="container container--pos">
+<div id="main" class="main">
+    <div class="container container--pos container--main">
         <header class="header">
             <div class="header__logo">
                 <img src="./img/main/main-logo.png" alt="logo">
             </div>
-            <nav class="nav">
+            <nav class="nav main__nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#">MAIN</a></li>
-                    <li class="nav__item"><a href="#">about</a></li>
-                    <li class="nav__item"><a href="#">game features</a></li>
-                    <li class="nav__item"><a href="#">System requirements</a></li>
-                    <li class="nav__item"><a href="#">quotes</a></li>
+                    <li class="nav__item"><a href="#main">MAIN</a></li>
+                    <li class="nav__item"><a href="#about">about</a></li>
+                    <li class="nav__item"><a href="#features">game features</a></li>
+                    <li class="nav__item"><a href="#req">System requirements</a></li>
+                    <li class="nav__item"><a href="#quotes">quotes</a></li>
                 </ul>
             </nav>
             <div class="lang">
@@ -31,15 +31,24 @@
                     
                 </div>
                 <div class="lang__links">
-                    <div class="lang__link">
-                        <svg>
-                            <use xlink:href="img/icons/icons.svg#xbox"></use>
-                        </svg>
+                    <div class="lang__burger">
+                        <span></span>
                     </div>
                     <div class="lang__link">
-                        <svg>
-                            <use xlink:href="img/icons/icons.svg#steam"></use>
-                        </svg>
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="img/icons/icons.svg#xbox"></use>
+                            </svg>
+                        </a>
+                        
+                    </div>
+                    <div class="lang__link">
+                        <a href="#">
+                            <svg>
+                                <use xlink:href="img/icons/icons.svg#steam"></use>
+                            </svg>
+                        </a>
+                        
                     </div>
                 </div>
             </div>
@@ -56,12 +65,39 @@
         </button>
 
         <div class="down">
-            <a href="#">
+            <a href="#about">
                 <span>The story</span>
                 <svg>
                     <use xlink:href="img/icons/icons.svg#down"></use>
                 </svg>
             </a>
+        </div>
+
+        <div class="menu">
+            <div class="container container--pos container--menu">
+                <nav class="nav">
+                    <ul class="nav__list nav__list--menu">
+                        <li class="nav__item nav__item--menu"><a href="#main">MAIN</a></li>
+                        <li class="nav__item nav__item--menu"><a href="#about">about</a></li>
+                        <li class="nav__item nav__item--menu"><a href="#features">game features</a></li>
+                        <li class="nav__item nav__item--menu"><a href="#req">System requirements</a></li>
+                        <li class="nav__item nav__item--menu"><a href="#quotes">quotes</a></li>
+                    </ul>
+                </nav>
+                <div class="menu__icons">
+                    <div class="menu__link">
+                        <svg>
+                            <use xlink:href="img/icons/icons.svg#xbox"></use>
+                        </svg>
+                    </div>
+                    <div class="menu__link">
+                        <svg>
+                            <use xlink:href="img/icons/icons.svg#steam"></use>
+                        </svg>
+                    </div>
+                </div>
+                
+            </div>
         </div>
         
     </div>

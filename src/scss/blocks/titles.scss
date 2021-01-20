@@ -1,7 +1,6 @@
 .title {
     font-family: 'BEBAS NEUE', Arial, Helvetica, sans-serif ;
     font-weight: 700;
-    font-size: 5rem;
     line-height: 100%;
     text-align: center;
     letter-spacing: 0.0375em;
@@ -9,11 +8,22 @@
 
     color: $text-color;
 
+    @include adaptiv-font(5, 2);
+
+    @media (min-width: 1440px) {
+        font-size: 5rem;
+    }
+
     &--color-main {
-        font-size: 2.25rem;
         color: $main-color;
-        text-align-last: left;
+        text-align: left;
         letter-spacing: .055em;
+
+        @include adaptiv-font(2.25, 1.3125);
+
+        @media (min-width: 1440px) {
+            font-size: 2.25rem;
+        }
     }
 
     &--cursor-p {
@@ -22,7 +32,11 @@
     }
 
     &--fz-sm {
-        font-size: 1.5rem;
+        @include adaptiv-font(1.5, 1.125);
+
+        @media (min-width: 1440px) {
+            font-size: 1.5rem;
+        }
     }
 }
 
@@ -35,4 +49,10 @@
     text-align: center;
 
     color: #FFFFFF;
+
+    @include adaptiv-font(1.5, 1.125);
+
+    @media (min-width: 1440px) {
+        font-size: 1.5rem;
+    }
 }

@@ -1,28 +1,48 @@
 .card {
     grid-column: 2 / 3;
 
+    width: 452/597*100%;
+    padding: 14px 20px 21px 17px;
+    background: #1C1E1F;
+    border-radius: 10px;
+
+    @media (max-width: 991px) {
+        grid-column: 1 / 2;
+        justify-self: center;
+    }
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+
     &--first {
         grid-row: 1/2;
         justify-self: end;
+        @media (max-width: 991px) {
+            grid-row: 2 /3;
+            align-self: end;
+        }
     }
 
     &--third {
         grid-row: 3 / 4;
         justify-self: end;
         margin-right: 40/597 * 100%;
+        @media (max-width: 991px) {
+            grid-row: 4 / 5;
+            margin-right: 0;
+        }
     }
 
-    width: 452/597*100%;
-    padding: 14px 20px 21px 17px;
-    background: #1C1E1F;
-    border-radius: 10px;
-
+    
     &__header {
         display: flex;
         align-items: center;
         position: relative;
 
         margin-bottom: 26px;
+        @media (max-width: 575px) {
+            margin-bottom: 18px;
+        }
     }
 
     &__avatar {
@@ -31,6 +51,12 @@
         max-height: 62px;
         border-radius: 50%;
         margin-right: 30px;
+
+        @media (max-width: 575px) {
+            width: 40px;
+            height: 40px;
+            margin-right: 21px;
+        }
 
         img {
             position: relative;
@@ -53,28 +79,42 @@
             height: 100%;
             background-color:$main-color;
             border-radius: 50%;
+            @media (max-width: 767px) {
+                right: -4px;
+                top: 4px;
+            }
         }
     }
 
     &__name {
         font-family: 'BEBAS NEUE', Arial, Helvetica, sans-serif ;
         font-weight: 700;
-        font-size: 1.5rem;
         line-height: 100%;
+
+        @include adaptiv-font(1.5, 1.3125);
 
         letter-spacing: .083em;
 
         color: $main-color;
+
+        @media (min-width: 1440px) {
+            font-size: 1.5rem;
+        }
     }
 
     &__subname {
         font-weight: 400;
-        font-size: 1.125rem;
         line-height: 122%;
         text-align: justify;
         color:$text-color;
 
         opacity: 0.5;
+
+        @include adaptiv-font(1.125, 0.875);
+
+        @media (min-width: 1440px) {
+            font-size: 1.125rem;
+        }
     }
 
 
@@ -91,21 +131,29 @@
 
     &__body {
         font-weight: 400;
-        font-size: 1.125rem;
         line-height:139%;
         width: 90%;
 
         color: $text-color;
 
         margin-bottom: 8px;
+
+        @include adaptiv-font(1.125, 0.875);
+
+        @media (min-width: 1440px) {
+            font-size: 1.125rem;
+        }
     }
 
     &__date {
         font-weight: 400;
-        font-size: .875rem;
         line-height: 136%;
-
+        @include adaptiv-font(0.875, 0.75);
         color: $text-color;
         opacity: 0.5;
+
+        @media (min-width: 1440px) {
+            font-size: .875rem;
+        }
     }
 }

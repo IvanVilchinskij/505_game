@@ -8,11 +8,23 @@
     &__suptitle {
         text-align: left;
         margin-bottom: .41em;
+
+        @media (max-width: 575px) {
+            margin-bottom: .14em;
+        }
     }
 
     &__title {
         text-align: left;
         margin-bottom: .1875em;
+        @media (max-width: 991px) {
+            width: 50%;
+        }
+        @media (max-width: 575px) {
+            width: 60%;
+            margin-bottom: 1em;
+        }
+        
     }
     &__line {
         position: relative;
@@ -21,5 +33,7 @@
         background: #fff;
         border-radius: 4px;
         z-index: 1;
+
+        
     }
 }

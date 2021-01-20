@@ -3,11 +3,29 @@
     padding: 145px 0 170px;
     background: url('../img/req/req-bg.jpg') 50% 90%/cover no-repeat;
 
+    @media (max-width: 767px) {
+        padding: 90px 0 234px;
+        background: url('../img/req/req-bg.jpg') 50% 100%/contain no-repeat;
+    }
+    @media (max-width: 575px) {
+        padding: 68px 0 234px;
+        
+    }
+    @media (max-width: 430px) {
+        background: url('../img/req/req-bg--sm.jpg') 50% 100%/contain no-repeat;
+    }
+
     &__suptitle {
         margin-bottom: .5em;
     }
 
     &__title {
         margin-bottom: 133px;
+        @media (max-width: 767px) {
+            margin-bottom: 70px;
+        }
+        @media (max-width: 575px) {
+            margin-bottom: 35px;
+        }
     }
 }

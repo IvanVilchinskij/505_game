@@ -3,10 +3,25 @@
     z-index: 2;
     padding-bottom: 47px;
 
+    @media (max-width: 991px) {
+        padding: 50px 0 47px;
+    }
+    @media (max-width: 575px) {
+        padding: 30px 0 49px;
+    }
+    
     &__header {
         display: grid;
-        grid-template: 1fr / 2.55fr 6.12fr 3.27fr;
+        grid-template: auto / 2.55fr 6.12fr 3.27fr;
         align-items: center;
+
+        @media (max-width: 1199px) {
+            grid-template: auto / 15% 60% 25%;
+        }
+        @media (max-width: 991px) {
+            display: flex;
+            flex-direction: column;
+        }
 
         &:after {
             content: '';
@@ -16,12 +31,21 @@
             background-color: rgba(255, 255, 255, .5);
             margin: 31px 0 22px;
             grid-column: 1 / 4;
+
+            @media (max-width: 991px) {
+                margin: 28px 0 19px;
+            }
         }
     }
 
     &__logo {
         width: 90px;
         height: 90px;
+
+        @media (max-width: 1199px)  {
+            width: 60px;
+            height: 60px;
+        }
         img {
             width: 100%;
             object-fit: cover;
@@ -32,6 +56,16 @@
         padding-top: 25px;
         display: flex;
         justify-content: flex-end;
+        @media (max-width: 991px) {
+            width: 100%;
+            justify-content: center;
+            padding-top: 41px;
+        }
+        @media (max-width: 575px) {
+            padding: 0 10px;
+            justify-content: space-between;
+        }
+        
 
     }
 
@@ -39,12 +73,17 @@
         
         width: 25px;
         height: 19px;
-        margin: 0 26px;
+        margin: 0 calc(26/326 * 100%);
         display: flex;
         justify-content: center;
 
         cursor: pointer;
-
+        @media (max-width: 1199px) {
+            margin: 0 calc(15/326 * 100%);
+        }
+        @media (max-width: 575px) {
+            margin: 0;
+        }
         &:hover {
             svg {
                 fill: #FF1313;
@@ -92,17 +131,32 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+        }
     }
 
     &__copyr {
         font-weight: 400;
-        font-size: .875rem;
+        
         line-height: 136%;
 
         color: $text-color;
 
+        @include adaptiv-font(0.875, 0.75);
+
         mix-blend-mode: normal;
         opacity: 0.5;
+        @media (min-width: 1440px) {
+            font-size: .875rem;
+        }
+        @media (max-width: 991px) {
+            margin-bottom: 34px;
+        }
+        @media (max-width: 575px) {
+            text-align: center;
+        }
     }
 
     &__policy {
@@ -111,10 +165,39 @@
         line-height: 1rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
+
+        @media (max-width: 575px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         a {
             color: $text-color;
             position: relative;
             padding: 0 .66em;
+
+            transition: color .2s ease;
+
+            &:hover {
+                color: $main-color;
+            }
+
+            @media (max-width: 575px) {
+                margin-bottom: 20px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -0.5px;
+                display: none;
+                height: 1em;
+                width: 1px;
+                background-color: #fff;
+                transform: translateY(-50%);
+            }
 
             &::after {
                 content: '';
@@ -126,6 +209,22 @@
                 width: 1px;
                 background-color: #fff;
                 transform: translateY(-50%);
+            }
+
+            &:first-child {
+                &::after {
+                    @media (max-width: 575px) {
+                        display: none;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                @media (max-width: 575px) {
+                    &::before {
+                        display: block;
+                    }
+                }
             }
 
             &:last-child {

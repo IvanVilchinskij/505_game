@@ -12,6 +12,13 @@
     }
 }
 
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + rem} + #{$addSize*16} * ((100vw - 320px) / #{$maxWidth}));
+}
+
 /* Vars */
 
 $main-color: #FFB548;
@@ -33,6 +40,13 @@ html, body {
     font-family: 'OpenSans', Arial, Helvetica, sans-serif;
 }
 
+.overflow-active {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 /* Blocks */
 
 @import 'blocks/wrappers';
@@ -49,6 +63,7 @@ html, body {
 @import 'blocks/block';
 @import 'blocks/tabel';
 @import 'blocks/card';
+@import 'blocks/menu';
 
 /* Sections */
 

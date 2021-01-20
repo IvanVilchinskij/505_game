@@ -1,10 +1,18 @@
 .lang {
     display: grid;
     grid-template: auto / 6.5fr 10fr;
-    /* justify-content: space-between; */
     align-items: center;
     width: 168/360 *100%;
     justify-self: end;
+
+    @media (max-width: 1199px) {
+        width: auto;
+        grid-template: auto / 1fr 1.5fr;
+    }
+    @media (max-width: 991px) {
+        grid-template: auto / 60fr 40fr;
+        width: 100px;
+    }
 
     &__setlang {
         display: flex;
@@ -26,40 +34,83 @@
             display: block;
             position: relative;
             padding-right: 1.42em;
+            color: $text-color;
 
+            transition: color .2s ease;
+
+            &:hover {
+                color: $main-color;
+
+                .lang__icon {
+                    svg {
+                        fill: $main-color;
+                    }
+                }
+            }
+
+        }
+
+        @media (max-width: 991px) {
+            height: 30px;
         }
 
         &::after {
             content: '';
             position: absolute;
-            /* top: -0.6em; */
             top: 0;
             right: 0;
             width: 1px;
             height: 100%;
             opacity: 0.5;
             background-color: #fff;
-            border-radius: 20%;
+            border-radius: 20%;           
         }
+
+        &.active {
+            .lang__icon {
+                svg {
+                    transform: rotateX(180deg);
+
+                }        
+            }
+
+            .lang__choose {
+                visibility: visible;
+                opacity: 1;
+                top: 100%;
+            }
+        }
+
+        
     }
 
     &__choose {
         position: absolute;
         visibility: hidden;
+        opacity: 0;
 
         top: 0;
-        left: 0;
+        left: -0.5em;
         background-color: #000;
         padding: .625em .5em;
         border-radius: calc(3em/(16*0.75));
+
+        transition: all .2s ease;
+
     }
 
     &__ant {
         margin-bottom: .5em;
         padding-right: 1.25em;
 
+        transition: color .3s ease;
+
         &:last-child{
             margin-bottom: 0;
+        }
+
+        &:hover {
+            color: $main-color;
         }
     }
 
@@ -73,6 +124,8 @@
             height: 6px;
 
             fill: #fff;
+
+            transition: transform .3s ease, color .2s ease;
         }
     }
 
@@ -89,8 +142,78 @@
         }
     }
 
+    &__burger {
+        position: relative;
+        z-index: 1000;
+        display: none;
+        width: 25px;
+        height: 17.5px;
+
+        cursor: pointer;
+
+        &::before, &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 2.5px;
+            right: 0;
+            background: #FFFFFF;
+            border-radius: 3px;
+            transition: all .2s ease;
+        }
+
+        &::before {
+            top: 0;
+            width: 100%;
+        }
+
+        &:after {
+            bottom: 0;
+            width: 60%;
+        }
+
+        span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) scale(1);
+            width: 100%;
+            height: 2.5px;
+            background: #FFFFFF;
+            border-radius: 3px;
+            transition: all .2s ease;
+        }
+
+        @media (max-width: 991px) {
+            display: block;
+        }
+
+        &.active-menu {
+            span {
+                transform: translateY(-50%) scale(0);
+            }
+
+            &::before {       
+                transform-origin: left top;
+                transform: rotateZ(45deg);
+            }
+
+            &::after {       
+                width: 100%;
+                transform-origin: left bottom;
+                transform:  rotateZ(-45deg) translate(-1.56px, 1.56px);
+            }
+        }
+    }
+
     &__link {
         padding-right: 17px;
+        @media (max-width: 1199px) {
+            padding:0 9px;
+        }
+
+        @media (max-width: 991px) {
+            display: none;
+        }
 
         &:last-child {
             padding-right: 0;
